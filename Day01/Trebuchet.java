@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-class AdventOfCode1 {
+class Trebuchet {
 	public static void main(String[] args) {
 		try {
 			File myFile = new File("input.txt");
