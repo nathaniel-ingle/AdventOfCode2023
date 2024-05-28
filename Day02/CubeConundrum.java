@@ -44,19 +44,26 @@ class CubeConundrum {
 			myReader.close();
 			
 			List<Integer> possibleGames = new LinkedList<Integer>();
+			List<Integer> gamePowers = new LinkedList<Integer>();
 			for (CubeGame game : games) {
 				if (!(game.highestBlue() > MAX_BLUE || game.highestRed() > MAX_RED || game.highestGreen() > MAX_GREEN)) {
 					possibleGames.add(game.getGameID());
 				}
+				gamePowers.add(game.highestBlue() * game.highestRed() * game.highestGreen()); 
 			}
 
 			int gameIDSum = 0;
+			int powerSum = 0;
 
 			for (int gameID : possibleGames) {
 				gameIDSum += gameID;
 			}
+			for (int gamePower : gamePowers) {
+				powerSum += gamePower;
+			}
 
-			System.out.println(gameIDSum);
+			System.out.println("Part 1: " + gameIDSum);
+			System.out.println("Part 2: " + powerSum);
 
 
 		} catch (FileNotFoundException e) {
